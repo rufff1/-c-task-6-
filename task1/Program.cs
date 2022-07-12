@@ -5,24 +5,36 @@ namespace task1
     {
         static void Main()
         {
-            DocumentProgram basicprogram = new DocumentProgram();
-            ExpertDocumentProgram expertDocumentProgram = new ExpertDocumentProgram();
-            ProDocumentProgram proDocumentProgram = new ProDocumentProgram();
 
+            string word = "expert";
+            
+            if(word=="basic")
+            {
+                DocumentProgram basic = new DocumentProgram();    
+                basic.OpenDocument();
+                basic.EditDocument();
+                basic.SaveDocument();
+            }
+            else if (word == "pro")
+            {
+                ProDocumentProgram pro = new ProDocumentProgram();
+                pro.OpenDocument(); 
+                pro.EditDocument();
+                pro.SaveDocument();
 
-            basicprogram.OpenDocument();
-            basicprogram.EditDocument();
-            basicprogram.SaveDocument();
+            }
+           else if(word == "expert")
+            {
+                ExpertDocumentProgram expert = new ExpertDocumentProgram(); 
+                expert.OpenDocument();
+                expert.EditDocument();
+                expert.SaveDocument();
 
-            //expertDocumentProgram.OpenDocument();
-            //expertDocumentProgram.EditDocument();
-            //expertDocumentProgram.SaveDocument();
-
-
-            //proDocumentProgram.OpenDocument();
-            //proDocumentProgram.EditDocument();
-            //proDocumentProgram.SaveDocument();
-
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
         }
     }
 }
